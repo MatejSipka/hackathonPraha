@@ -1,23 +1,29 @@
 // Add your native dependencies here:
 
 // Uncomment to add recyclerview-v7 dependency
-//dependencies {
+dependencies {
 //	compile 'com.android.support:recyclerview-v7:+'
-//}
+  compile 'com.google.android.gms:play-services-maps:+'
+}
 
-android {  
-  defaultConfig {  
-    generatedDensities = []
-    applicationId = "org.nativescript.Ixperta" 
+// android {  
+//   defaultConfig {  
+//     generatedDensities = []
+//     applicationId = "org.nativescript.Ixperta" 
     
-    //override supported platforms
-    // ndk {
-    //       abiFilters.clear()
-    //   		abiFilters "armeabi-v7a"
- 		// }
+//     //override supported platforms
+//     // ndk {
+//     //       abiFilters.clear()
+//     //   		abiFilters "armeabi-v7a"
+//  		// }
   
-  }  
-  aaptOptions {  
-    additionalParameters "--no-version-vectors"  
-  }  
-} 
+//   }
+//   aaptOptions {  
+//     additionalParameters "--no-version-vectors"  
+//   }  
+// } 
+
+// project.ext {
+//     // Uncomment below to change Google Play Services Version
+//     // googlePlayServicesVersion = "+"
+// }

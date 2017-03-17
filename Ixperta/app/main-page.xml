@@ -1,4 +1,14 @@
-<Page loaded="pageLoaded">
-  <ActionBar title="My App" class="action-bar"></ActionBar>
+<Page 
+xmlns="http://www.nativescript.org/tns.xsd" xmlns:maps="nativescript-google-maps-sdk"
+loaded="pageLoaded">
+  <ActionBar title="CHEKIBREKI" class="action-bar"></ActionBar>
   <!-- Your UI components go here -->
+<GridLayout>
+    <maps:mapView latitude="{{ latitude }}" longitude="{{ longitude }}" 
+                                    zoom="{{ zoom }}" bearing="{{ bearing }}" 
+                                    tilt="{{ tilt }}" padding="{{ padding }}" mapReady="onMapReady"  
+                                markerSelect="onMarkerSelect" markerBeginDragging="onMarkerBeginDragging"
+                                markerEndDragging="onMarkerEndDragging" markerDrag="onMarkerDrag"
+                                cameraChanged="onCameraChanged" />
+  </GridLayout>
 </Page>
