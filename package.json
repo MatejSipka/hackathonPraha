@@ -10,6 +10,7 @@
     }
   },
   "dependencies": {
+    "nativescript-floatingactionbutton": "^2.2.7",
     "nativescript-google-maps-sdk": "^1.4.3",
     "nativescript-theme-core": "~1.0.2",
     "tns-core-modules": "^2.5.1"
