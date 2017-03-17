@@ -7,7 +7,7 @@
             "type": "nativescript",
             "request": "launch",
             "platform": "ios",
-            "appRoot": "${workspaceRoot}/Ixperta",
+            "appRoot": "${workspaceRoot}",
             "sourceMaps": true,
             "watch": true
         },
@@ -16,7 +16,7 @@
             "type": "nativescript",
             "request": "attach",
             "platform": "ios",
-            "appRoot": "${workspaceRoot}/Ixperta",
+            "appRoot": "${workspaceRoot}",
             "sourceMaps": true,
             "watch": false
         },
@@ -25,7 +25,7 @@
             "type": "nativescript",
             "request": "launch",
             "platform": "android",
-            "appRoot": "${workspaceRoot}/Ixperta",
+            "appRoot": "${workspaceRoot}",
             "sourceMaps": true,
             "watch": true
         },
@@ -34,7 +34,7 @@
             "type": "nativescript",
             "request": "attach",
             "platform": "android",
-            "appRoot": "${workspaceRoot}/Ixperta",
+            "appRoot": "${workspaceRoot}",
             "sourceMaps": true,
             "watch": false
         }

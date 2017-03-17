@@ -6,9 +6,9 @@
 tscommand*.tmp.txt
 .tscache
 
-node_modules
-dist
-package
+node_modules/
+dist/
+package/
 
 *.js
 !tests/hooks/**/*.*
@@ -47,6 +47,6 @@ tests/lib/
 .DS_Store
 
 platforms
-lib
-hooks
-node_modules
+apps/lib/
+apps/hooks/
+apps/node_modules/
