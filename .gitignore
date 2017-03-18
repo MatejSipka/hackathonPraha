@@ -6,6 +6,7 @@
 tscommand*.tmp.txt
 .tscache
 
+node_modules/
 dist/
 package/
 
