@@ -1,5 +1,5 @@
 var mapsModule = require("nativescript-google-maps-sdk");
-var totalyOPModule = require('./actions/fab');
+var totalyOPModule = require('./actions/fab').test;
 
 
 function onMapReady(args) {
@@ -17,7 +17,7 @@ function onMapReady(args) {
 }
 
 function onMarkerSelect(args) {
-    
+
     console.log("Clicked on " + args.marker.title);
 }
 
