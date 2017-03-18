@@ -62,6 +62,5 @@ exports.onMapReady = mapReadyCallback;
 
 
 exports.pageLoaded = function () {
-    // console.log(typeof location.onMapReady);
     console.log('hello');
 };

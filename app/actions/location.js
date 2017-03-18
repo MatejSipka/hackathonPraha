@@ -12,7 +12,7 @@ function addMarkers(mapView) {
             index: 1
         }
     }];
-    for(var i = 0; i < markers.length; i++) {
+    for (var i = 0; i < markers.length; i++) {
         var mark = new mapsModule.Marker();
         mark.position = markers[0].position;
         mark.title = markers[0].title;
@@ -20,7 +20,6 @@ function addMarkers(mapView) {
         mark.userData = markers[0].userData;
         mapView.addMarker(mark);
     }
-
 }
 
 
@@ -33,11 +32,6 @@ function addMarkers(mapView) {
 
 exports.onMapReady = function onMapReady(args) {
     var mapView = args.object;
-    for(var a in mapView){
-        console.log(a);
-    }
-    // var gMap =   mapView.getMap();
-    // gMap.setMyLocationEnabled(true);
 
     addMarkers(mapView);
 };

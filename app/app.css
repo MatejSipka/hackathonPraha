@@ -31,3 +31,14 @@
     width: 100%;
     vertical-align: bottom;
 }
+
+.info {
+    font-weight: bold;
+    margin: 10 5 5 20;
+    font-size: 20;
+}
+
+.detail {
+    margin: 0 20;
+    font-size: 12;
+}
