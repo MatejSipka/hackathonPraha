@@ -41,15 +41,19 @@ exports.onMapReady = mapReadyCallback;
 
 exports.onMarkerSelect = function () {
     view.getViewById(page, "test").className = 'cardStyle cardStyleSmall';
+    view.getViewById(page, "mv").className = 'to-my-location small';
+    
     // this.addCss('.cardStyle { margin-bottom: -350 }');
     // document.getElementById('test').className = 'cardStyle cardStyleSmall';
 };
 exports.coordsTap = function () {
     view.getViewById(page, "test").className = 'cardStyle';
+    view.getViewById(page, "mv").className = 'to-my-location';    
 };
 
 exports.showDetail = function () {
     view.getViewById(page, "test").className = 'cardStyle cardStyleDetail';
+    view.getViewById(page, "mv").className = 'to-my-location detail';
 };
 
 exports.pageLoaded = function (args) {

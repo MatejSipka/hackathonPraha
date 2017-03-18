@@ -7,24 +7,31 @@
 .fab-button {
     height: 50;
     width: 50;
-    margin: 55 20;
+    /*margin: 55 20;*/
     color: #FFF;
     background-color: #ff4081;
     horizontal-align: right;
     vertical-align: bottom;
 }
 
+
+
 .to-my-location {
     height: 50;
     width: 50;
-    margin: 120 20;
+    margin: 20 10;
     color: #2d2d2d;
     background-color:#FFF;
     horizontal-align: right;
     vertical-align: bottom;
 }
+.to-my-location.small {
+    transform: translateY(-75);
+}
 
-
+.to-my-location.detail {
+    visibility: collapsed;
+}
 
 .cardStyle {
     background-color: #ffffff;
