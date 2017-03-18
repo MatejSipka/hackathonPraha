@@ -1,9 +1,10 @@
-
+import '../vendor/MojioClientLite.js'
 
 
 let mojio_client;
 
 
+/* returns promise */
 function init()
 {
     const config = {
@@ -15,7 +16,7 @@ function init()
     return mojio_client.authorize('erik.chalupa@gmail.com','sexy_beast_007');
 }
 
-
+/* returns object */
 function getPosition()
 {
     mojio_client.get().vehicles().then((res) => {
