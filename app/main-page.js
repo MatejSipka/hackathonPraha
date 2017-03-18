@@ -1,20 +1,23 @@
-var mapsModule = require("nativescript-google-maps-sdk");
+// var mapsModule = require("nativescript-google-maps-sdk");
 var totalyOPModule = require('./actions/fab').test;
 
+var location = require('./actions/location');
 
-function onMapReady(args) {
-    var mapView = args.object;
 
-    console.log("Setting a marker...");
-    var marker = new mapsModule.Marker();
-    marker.position = mapsModule.Position.positionFromLatLng(-33.86, 151.20);
-    marker.title = "Sydney";
-    marker.snippet = "Australia";
-    marker.userData = {
-        index: 1
-    };
-    mapView.addMarker(marker);
-}
+
+// function onMapReady(args) {
+//     var mapView = args.object;
+
+//     console.log("Setting a marker...");
+//     var marker = new mapsModule.Marker();
+//     marker.position = mapsModule.Position.positionFromLatLng(-33.86, 151.20);
+//     marker.title = "Sydney";
+//     marker.snippet = "Australia";
+//     marker.userData = {
+//         index: 1
+//     };
+//     mapView.addMarker(marker);
+// }
 
 function onMarkerSelect(args) {
 
@@ -25,11 +28,12 @@ function onCameraChanged(args) {
     console.log("Camera changed: " + JSON.stringify(args.camera));
 }
 
-exports.onMapReady = onMapReady;
+exports.onMapReady = location.onMapReady;
 exports.onMarkerSelect = onMarkerSelect;
 exports.onCameraChanged = onCameraChanged;
 
 exports.pageLoaded = function () {
+    console.log(typeof location.onMapReady);
     for (var a in exports) {
         console.log(a);
     }
