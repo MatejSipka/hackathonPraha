@@ -2,12 +2,17 @@ var mapsModule = require("nativescript-google-maps-sdk");
 
 
 function addMarkers(mapView) {
+
+    mapView.zoom = 15;
+    mapView.longitude = 16.58;
+    mapView.latitude = 49.20;
+
     // TODO : Add some Markers
     // Fake one
-    var markers = /*TODO : GET markers */ [{
-        position: mapsModule.Position.positionFromLatLng(50.0565, 14.79714),
+    var markers = /*TODO : GET markers */[{
+        position: mapsModule.Position.positionFromLatLng(49.20, 16.58),
         title: 'Brno',
-        snippet: 'Australia',
+        snippet: 'Czechia',
         userData: {
             index: 1
         }

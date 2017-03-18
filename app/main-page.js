@@ -3,7 +3,6 @@ var mapReadyCallback = require('./actions/location').onMapReady;
 
 var detail = require('./detail-page');
 var tNSTextToSpeech = require("nativescript-texttospeech");
-var mojio = require("./actions/mojio");
 
 
 // var topmost = frameModule.topmost();
@@ -11,29 +10,42 @@ var mojio = require("./actions/mojio");
 var positionX;
 var positionY;
 
-mojio.init();
+var hvezdarenX = 49.20;
+var hvezdarenY = 16.58;
+
+var petrovX = 49.19;
+var petrovY = 16.60;
+
+getActualCarPosition();
 
 
 function getActualCarPosition() {
     setTimeout(function () {
 
-        var position = mojio.getPosition();
-        if (position) {
-            positionX = position.Lat;
-            positionY = position.Lng;
-            console.log(positionX + " " + positionY);
-        } else {
-            console.log("undefined");
-        }
+        var myInit = {
+            method: 'GET',
+            headers: { Authorization: "Bearer 99d41dd7-32ed-4ffe-bd33-05f9552d0a18" },
+            mode: 'cors',
+            cache: 'default'
+        };
 
-        getActualCarPosition();
+        const addr = 'https://api.moj.io/v2/vehicles/'
+
+        fetch(addr, myInit).then(response => { return response.json(); }).then(function (r) {
+            positionY = r.Data[0].Location.Lng;
+            positionX = r.Data[0].Location.Lat;
+
+            console.log(positionX + " " + positionY);
+            getActualCarPosition();
+        });
+
     }, 1000);
 };
 
 let TTS = new tNSTextToSpeech.TNSTextToSpeech();
 
 let speakOptions = {
-    text: 'Stop it!', /// *** required ***
+    text: 'Suck my cock and lick my balls bitches!', /// *** required ***
     speakRate: 2, // optional - default is 1.0
     pitch: 10.0, // optional - default is 1.0
     volume: 20.0, // optional - default is 10
@@ -45,7 +57,7 @@ let speakOptions = {
 
 
 exports.funIn = function thisIsBullshit() {
-    TTS.speak(speakOptions);    
+    TTS.speak(speakOptions);
 }
 // function onMarkerSelect(args) {
 
@@ -58,7 +70,7 @@ exports.funIn = function thisIsBullshit() {
 
 
 
-exports.onMapReady = mapReadyCallback; 
+exports.onMapReady = mapReadyCallback;
 
 // exports.onMarkerSelect = onMarkerSelect;
 // exports.onCameraChanged = onCameraChanged;
