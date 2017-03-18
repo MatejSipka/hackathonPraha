@@ -1,6 +1,6 @@
 var mapsModule = require("nativescript-google-maps-sdk");
 var totalyOPModule = require('./actions/fab').test;
-
+var tNSTextToSpeech = require("nativescript-texttospeech");
 
 function onMapReady(args) {
     var mapView = args.object;
@@ -15,6 +15,20 @@ function onMapReady(args) {
     };
     mapView.addMarker(marker);
 }
+
+let TTS = new tNSTextToSpeech.TNSTextToSpeech();
+
+let speakOptions = {
+    text: 'Whatever you like', /// *** required ***
+    speakRate: 1.0, // optional - default is 1.0
+    pitch: 1.0, // optional - default is 1.0
+    volume: 5.0, // optional - default is 10
+    language: "en-GB",  // optional - default is system language,
+    finishedCallback: Function // optional
+}
+
+// Call the `speak` method passing the SpeakOptions object
+TTS.speak(speakOptions);
 
 function onMarkerSelect(args) {
 
