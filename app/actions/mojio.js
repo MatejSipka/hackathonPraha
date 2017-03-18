@@ -17,11 +17,7 @@ function init() {
         application: 'e61b49e1-ddd3-4056-96a0-62189ef343e6',
         secret: '6604986c-03dc-41aa-9a9f-bab88922279b'
     };
-<<<<<<< HEAD
-    mojio_client =  new moijoModule(config);
-=======
     mojio_client = new moijoModule(config);
->>>>>>> ee8500493a0e92347aa845d1b65de9c801048583
 
     return mojio_client.authorize('erik.chalupa@gmail.com', 'sexy_beast_007');
 }
