@@ -10,29 +10,23 @@ actionBarHidden="true">
     <maps:mapView row="1" zIndex="0" latitude="{{ latitude }}" longitude="{{ longitude }}" 
                                     zoom="{{ zoom }}" bearing="{{ bearing }}" 
                                     tilt="{{ tilt }}" padding="{{ padding }}" mapReady="onMapReady"  
-                                markerSelect="onMarkerSelect" markerBeginDragging="onMarkerBeginDragging"
+                                markerSelect="onMarkerSelect" coordinateTapped="coordsTap" markerBeginDragging="onMarkerBeginDragging"
                                 markerEndDragging="onMarkerEndDragging" markerDrag="onMarkerDrag"
                                 cameraChanged="onCameraChanged" />
-    <Card:CardView zIndex="2" row="1" class="cardStyle" elevation="10">
+    <Card:CardView tap="showDetail" id="test" zIndex="2" row="1" class="cardStyle" elevation="10">
            <grid-layout rows="auto,auto,*" columns="auto,*">
-               <label tap="showDetail" text="Brno" class="info" textWrap="true" row="1" col="1" />          
+               <label text="Brno" class="info" textWrap="true" row="1" col="1" />          
                <label class="detail" text="Some more info which can be useful maybe. What about now and something more text and and and" textWrap="true" row="2" col="1" />
            </grid-layout>
     </Card:CardView>
     
-    <FAB:fab tap="fabTap"
+    <FAB:fab tap="funOut"
                      row="1"
                      elevation="20"
                      zIndex="3"
                      icon="res://ic_navigation_white_24dp"
                      rippleColor="#f1f1f1"
                      class="fab-button" />
-    <FAB:fab tap="funIn"
-                     row="1"
-                     elevation="20"
-                     zIndex="3"
-                     icon="res://ic_my_location_black_24dp"                     
-                     rippleColor="#f1f1f1"
-                     class="to-my-location" />
+
   </GridLayout>
 </Page>

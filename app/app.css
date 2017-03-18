@@ -24,14 +24,24 @@
     vertical-align: bottom;
 }
 
+
+
 .cardStyle {
     background-color: #ffffff;
     color: #0d0d0d;
-    height: 80;
+    height: 0;
     width: 100%;
-    vertical-align: bottom;
+    vertical-align: bottom;    
 }
 
+
+.cardStyleDetail {
+    height: 75%;
+}
+
+.cardStyleSmall {
+    height: 80;
+}
 .info {
     font-weight: bold;
     margin: 10 5 5 20;

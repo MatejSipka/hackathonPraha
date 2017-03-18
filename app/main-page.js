@@ -1,4 +1,7 @@
 var frameModule = require("ui/frame");
+var view = require("ui/core/view");
+
+
 var mapReadyCallback = require('./actions/location').onMapReady;
 var getActualCarPosition = require('./actions/car-position').getCarPosition;
 
@@ -7,26 +10,22 @@ var tNSTextToSpeech = require("nativescript-texttospeech");
 
 
 
-
+var page;
 
 let TTS = new tNSTextToSpeech.TNSTextToSpeech();
 
-let speakOptions = {
-    text: 'Suck my cock and lick my balls bitches!', /// *** required ***
-    speakRate: 2, // optional - default is 1.0
-    pitch: 10.0, // optional - default is 1.0
+let speakOptions2 = {
+    text: 'Leeeeeeeeeeeeroy Jeeeeeeeeeeeenkins!', /// *** required ***
+    speakRate: 2.5, // optional - default is 1.0
+    pitch: 0.2, // optional - default is 1.0
     volume: 20.0, // optional - default is 10
     language: "en-US"  // optional - default is system language,
-}
+};
 
 
-// Call the `speak` method passing the SpeakOptions object
-
-
-exports.funIn = function thisIsBullshit() {
-    TTS.speak(speakOptions);
-}
-
+exports.funOut = function thisIsWhat() {
+    TTS.speak(speakOptions2);
+};
 // function onMarkerSelect(args) {
 
 //     console.log("Clicked on " + args.marker.title);
@@ -40,18 +39,28 @@ exports.funIn = function thisIsBullshit() {
 
 exports.onMapReady = mapReadyCallback;
 
-// exports.onMarkerSelect = onMarkerSelect;
-// exports.onCameraChanged = onCameraChanged;
+exports.onMarkerSelect = function () {
+    view.getViewById(page, "test").className = 'cardStyle cardStyleSmall';
+    // this.addCss('.cardStyle { margin-bottom: -350 }');
+    // document.getElementById('test').className = 'cardStyle cardStyleSmall';
+};
+exports.coordsTap = function () {
+    view.getViewById(page, "test").className = 'cardStyle';
+};
 
+exports.showDetail = function () {
+    view.getViewById(page, "test").className = 'cardStyle cardStyleDetail';
+};
 
-exports.pageLoaded = function () {
+exports.pageLoaded = function (args) {
+    page = args.object;
     getActualCarPosition();
     console.log('hello');
 };
 
 exports.detailLoaded = detail.detailLoaded;
 
-exports.showDetail = function () {
-    var topMost = frameModule.topmost();
-    topMost.navigate("detail-page");
-};
+// exports.showDetail = function () {
+//     var topMost = frameModule.topmost();
+//     topMost.navigate("detail-page");
+// };
