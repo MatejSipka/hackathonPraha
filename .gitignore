@@ -10,7 +10,6 @@ node_modules/
 dist/
 package/
 
-*.js
 !tests/hooks/**/*.*
 !gruntfile.js
 !js-libs/**/*.*
@@ -47,6 +46,6 @@ tests/lib/
 .DS_Store
 
 platforms
-apps/lib/
-apps/hooks/
-apps/node_modules/
+app/lib/
+hooks
+app/node_modules/
