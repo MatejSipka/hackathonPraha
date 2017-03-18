@@ -4,6 +4,7 @@
 dependencies {
 //	compile 'com.android.support:recyclerview-v7:+'
   compile 'com.google.android.gms:play-services-maps:+'
+  compile 'com.google.android.gms:play-services-location:+'
 }
 
 // android {  

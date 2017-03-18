@@ -1,8 +1,11 @@
 <Page 
-xmlns="http://www.nativescript.org/tns.xsd" xmlns:maps="nativescript-google-maps-sdk" xmlns:Card="nativescript-cardview" xmlns:FAB="nativescript-floatingactionbutton"
-loaded="pageLoaded" actionBarHidden="true">
-  <ActionBar title="CHEKIBREKI" class="action-bar"></ActionBar>
-  <!-- Your UI components go here -->
+xmlns="http://www.nativescript.org/tns.xsd" 
+xmlns:maps="nativescript-google-maps-sdk" 
+xmlns:Card="nativescript-cardview" 
+xmlns:FAB="nativescript-floatingactionbutton"
+
+loaded="pageLoaded" 
+actionBarHidden="true">
 <GridLayout rows="auto,*">
     <maps:mapView row="1" zIndex="0" latitude="{{ latitude }}" longitude="{{ longitude }}" 
                                     zoom="{{ zoom }}" bearing="{{ bearing }}" 
@@ -15,6 +18,7 @@ loaded="pageLoaded" actionBarHidden="true">
                <label text="This is test!" class="info" margin="10" textWrap="true" row="1" colSpan="2" />          
            </grid-layout>
     </Card:CardView>
+    
     <FAB:fab tap="fabTap"
                      row="1"
                      elevation="20"
@@ -22,7 +26,7 @@ loaded="pageLoaded" actionBarHidden="true">
                      icon="res://ic_add_white"
                      rippleColor="#f1f1f1"
                      class="fab-button" />
-    <FAB:fab tap="fabTap"
+    <FAB:fab tap="funIn"
                      row="1"
                      elevation="20"
                      zIndex="3"
