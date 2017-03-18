@@ -2,7 +2,6 @@
 // var totalyOPModule = require('./actions/fab').test;
 var mapReadyCallback = require('./actions/location').onMapReady;
 var tNSTextToSpeech = require("nativescript-texttospeech");
-var mojio = require("./actions/mojio");
 
 var positionX;
 var positionY;
