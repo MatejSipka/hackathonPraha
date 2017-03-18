@@ -4,6 +4,8 @@ var moijoModule = require('../vendor/MojioClientLite.js')
 let mojio_client;
 
 
+
+
 /* returns promise */
 function init()
 {
@@ -31,3 +33,11 @@ function getPosition()
         };
     });
 }
+
+
+module.exports = {
+    init: init,
+    getPosition: getPosition
+};
+
+
