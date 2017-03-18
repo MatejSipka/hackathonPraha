@@ -9,6 +9,8 @@ var petrovY = 16.60;
 let mojio_client;
 
 
+
+
 /* returns promise */
 function init() {
     const config = {
@@ -34,3 +36,11 @@ function getPosition() {
         };
     });
 }
+
+
+module.exports = {
+    init: init,
+    getPosition: getPosition
+};
+
+
