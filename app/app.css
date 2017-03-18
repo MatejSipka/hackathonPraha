@@ -12,9 +12,14 @@
     background-color: #ff4081;
     horizontal-align: right;
     vertical-align: bottom;
+    transition: all .3;
 }
 
 
+@keyframes smallTraslation {
+    from { transform: translateY(0); }
+    to { transform: translateY(-75); }
+}
 
 .to-my-location {
     height: 50;
@@ -24,9 +29,17 @@
     background-color:#FFF;
     horizontal-align: right;
     vertical-align: bottom;
+    transform: translateY(0);
+    animation-name: smallTraslation;
+    animation-duration: .3s;
+    animation-fill-mode: forwards;
+    animation-direction: reverse;
 }
 .to-my-location.small {
     transform: translateY(-75);
+    animation-name: smallTraslation;
+    animation-duration: .3s;
+    animation-fill-mode: forwards;
 }
 
 .to-my-location.detail {
@@ -41,14 +54,19 @@
     vertical-align: bottom;    
 }
 
-
 .cardStyleDetail {
     height: 75%;
+}
+
+@keyframes smallHeight {
+    from { height: 0; }
+    to { height: 80; }
 }
 
 .cardStyleSmall {
     height: 80;
 }
+
 .info {
     font-weight: bold;
     margin: 10 5 5 20;

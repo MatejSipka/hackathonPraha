@@ -9,15 +9,17 @@ var detail = require('./detail-page');
 var tNSTextToSpeech = require("nativescript-texttospeech");
 
 
+var center = true;
+
 
 var page;
 
 let TTS = new tNSTextToSpeech.TNSTextToSpeech();
 
 let speakOptions2 = {
-    text: 'Leeeeeeeeeeeeroy Jeeeeeeeeeeeenkins!', /// *** required ***
-    speakRate: 2.5, // optional - default is 1.0
-    pitch: 0.2, // optional - default is 1.0
+    text: 'Why won\'t you let me die!',
+    speakRate: 1.2, // optional - default is 1.0
+    pitch: 10, // optional - default is 1.0
     volume: 20.0, // optional - default is 10
     language: "en-US"  // optional - default is system language,
 };
@@ -25,16 +27,8 @@ let speakOptions2 = {
 
 exports.funOut = function thisIsWhat() {
     TTS.speak(speakOptions2);
+    center = true;
 };
-// function onMarkerSelect(args) {
-
-//     console.log("Clicked on " + args.marker.title);
-// }
-
-// function onCameraChanged(args) {
-//     console.log("Camera changed: " + JSON.stringify(args.camera));
-// }
-
 
 
 exports.onMapReady = mapReadyCallback;
@@ -61,6 +55,10 @@ exports.pageLoaded = function (args) {
     getActualCarPosition();
     console.log('hello');
 };
+
+exports.onCameraChanged = function () {
+    center = false;
+}
 
 exports.detailLoaded = detail.detailLoaded;
 

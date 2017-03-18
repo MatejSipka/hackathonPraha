@@ -6,7 +6,6 @@
 tscommand*.tmp.txt
 .tscache
 
-node_modules/
 dist/
 package/
 
@@ -48,4 +47,3 @@ tests/lib/
 platforms
 app/lib/
 hooks
-app/node_modules/
