@@ -24,16 +24,11 @@ function init() {
 
 /* returns object */
 function getPosition() {
-    mojio_client.get().vehicles().then((res) => {
-        return {
+    return mojio_client.get().vehicles().then((res) => {
+        res({
             Lat: res.Data[0].Location.Lat,
             Lng: res.Data[0].Location.Lng
-        };
-    }).catch(() => {
-        return {
-            Lat: '-1',
-            Lng: '-1'
-        };
+        });
     });
 }
 
