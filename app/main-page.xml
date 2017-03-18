@@ -15,7 +15,7 @@ actionBarHidden="true">
                                 cameraChanged="onCameraChanged" />
     <Card:CardView zIndex="2" row="1" class="cardStyle" elevation="10">
            <grid-layout rows="auto,auto,*" columns="auto,*">
-               <label text="Brno" class="info" textWrap="true" row="1" col="1" />          
+               <label tap="showDetail" text="Brno" class="info" textWrap="true" row="1" col="1" />          
                <label class="detail" text="Some more info which can be useful maybe. What about now and something more text and and and" textWrap="true" row="2" col="1" />
            </grid-layout>
     </Card:CardView>

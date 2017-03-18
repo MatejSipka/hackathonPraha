@@ -1,9 +1,12 @@
-// var mapsModule = require("nativescript-google-maps-sdk");
-// var totalyOPModule = require('./actions/fab').test;
+var frameModule = require("ui/frame");
 var mapReadyCallback = require('./actions/location').onMapReady;
 
+var detail = require('./detail-page');
 var tNSTextToSpeech = require("nativescript-texttospeech");
 var mojio = require("./actions/mojio");
+
+
+// var topmost = frameModule.topmost();
 
 var positionX;
 var positionY;
@@ -63,4 +66,11 @@ exports.onMapReady = mapReadyCallback;
 
 exports.pageLoaded = function () {
     console.log('hello');
+};
+
+exports.detailLoaded = detail.detailLoaded;
+
+exports.showDetail = function () {
+    var topMost = frameModule.topmost();
+    topMost.navigate("detail-page");
 };

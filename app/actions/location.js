@@ -23,13 +23,6 @@ function addMarkers(mapView) {
 }
 
 
-
-// exports = {
-//     onMapReady: function(){
-//         return 'ahoj';
-//     }
-// }
-
 exports.onMapReady = function onMapReady(args) {
     var mapView = args.object;
 
