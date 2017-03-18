@@ -12,15 +12,21 @@ function init()
     };
     mojio_client =  new MojioClientLite(config);
 
-    /* promise, but I am a gambling man */
-    mojio_client.authorize('erik.chalupa@gmail.com','sexy_beast_007');
+    return mojio_client.authorize('erik.chalupa@gmail.com','sexy_beast_007');
 }
 
 
 function getPosition()
 {
     mojio_client.get().vehicles().then((res) => {
-        res.Data[0].Location.Lat;
-        res.Data[0].Location.Lng;   
+        return {
+            Lat: res.Data[0].Location.Lat, 
+            Lng: res.Data[0].Location.Lng
+        };
+    }).catch(() => {
+        return {
+            Lat: '-1', 
+            Lng: '-1'
+        };
     });
 }
