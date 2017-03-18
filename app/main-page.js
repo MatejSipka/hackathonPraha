@@ -3,6 +3,9 @@ var totalyOPModule = require('./actions/fab').test;
 var tNSTextToSpeech = require("nativescript-texttospeech");
 var mojio = require("./actions/mojio");
 
+var positionX;
+var positionY;
+
 mojio.init();
 
 function onMapReady(args) {
@@ -23,12 +26,29 @@ function onMapReady(args) {
         index: 1
     };
     mapView.addMarker(marker);
+    getActualCarPosition();
 }
+
+function getActualCarPosition() {
+    setTimeout(function () {
+
+        var position = mojio.getPosition();
+        if (position) {
+            positionX = position.Lat;
+            positionY = position.Lng;
+            console.log(positionX + " " + positionY);
+        } else {
+            console.log("undefined");
+        }
+
+        getActualCarPosition();
+    }, 1000);
+};
 
 let TTS = new tNSTextToSpeech.TNSTextToSpeech();
 
 let speakOptions = {
-    text: 'Will the real Slim Shady please stand up... I repeat, will the real Slim Shady please stand up', /// *** required ***
+    text: 'Pod sem dievca pod sem, naklepem ta ako rezen!', /// *** required ***
     speakRate: 1.0, // optional - default is 1.0
     pitch: 1.0, // optional - default is 1.0
     volume: 5.0, // optional - default is 10
@@ -37,7 +57,7 @@ let speakOptions = {
 }
 
 // Call the `speak` method passing the SpeakOptions object
-// TTS.speak(speakOptions);
+
 
 function onMarkerSelect(args) {
 
