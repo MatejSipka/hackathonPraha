@@ -3,14 +3,22 @@ var totalyOPModule = require('./actions/fab').test;
 var tNSTextToSpeech = require("nativescript-texttospeech");
 var mojio = require("./actions/mojio");
 
+mojio.init();
+
 function onMapReady(args) {
     var mapView = args.object;
 
+    mapView.zoom = 15;
+    mapView.longitude = 16.60;
+    mapView.latitude = 49.19;
+
+
     console.log("Setting a marker...");
     var marker = new mapsModule.Marker();
-    marker.position = mapsModule.Position.positionFromLatLng(-33.86, 151.20);
-    marker.title = "Sydney";
-    marker.snippet = "Australia";
+    marker.position = mapsModule.Position.positionFromLatLng(49.19, 16.60);
+    marker.title = "Brno";
+    marker.snippet = "Czechia";
+
     marker.userData = {
         index: 1
     };
