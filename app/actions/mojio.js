@@ -25,7 +25,7 @@ function init() {
 /* returns object */
 function getPosition() {
     return mojio_client.get().vehicles().then((res) => {
-        res({
+        resolve({
             Lat: res.Data[0].Location.Lat,
             Lng: res.Data[0].Location.Lng
         });
