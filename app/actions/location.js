@@ -52,7 +52,7 @@ function moveMarker(Long, Lat) {
 
 exports.onMapReady = function onMapReady(args) {
     mapView = args.object;
-    addMarkerFirst(0, 0);
+    addMarkerFirst(16.605167, 49.192293);
 };
 
 function setZoon(isZoomed) {

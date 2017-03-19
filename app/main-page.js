@@ -50,10 +50,8 @@ exports.showDetail = function () {
     view.getViewById(page, "test").className = 'cardStyle cardStyleDetail';
 
     speakOptions2.text = view.getViewById(page, "explain-text").text;
-    TTS.speak(speakOptions2);
+    // TTS.speak(speakOptions2);
 };
-
-
 exports.buttonTap = function() {
     TTS.speak(speakOptions2);
 }
@@ -67,8 +65,8 @@ exports.pageLoaded = function (args) {
 };
 
 exports.onCameraChanged = function () {
-    // center = false;
-    // setZoon(center);
+//     center = false;
+//     setZoon(center);
 }
 
 exports.detailLoaded = detail.detailLoaded;

@@ -3,11 +3,23 @@ var location = require("./location");
 var PetrovX = 49.190;
 var PetrovY = 16.607;
 
+//49.191022, 16.607595
+var realPetrovX = 49.191022;
+var realPetrovY = 16.607595;
+
 var divadloX = 49.198;
 var divadloY = 16.613;
 
+//49.198320, 16.611004
+var realdivadloX = 49.198320;
+var realdivadloY = 16.611004;
+
 var vilaX = 49.207;
-var vilaY = 16.616;
+var vilaY = 16.617;
+
+//49.207206, 16.616012
+var realvilaX = 49.207206;
+var realvilaY = 16.616012;
 
 var page;
 var view;
@@ -47,7 +59,7 @@ function checkMarkers(positionY, positionX) {
     if (Number(positionX).toFixed(3) == PetrovX && Number(positionY).toFixed(3) == PetrovY) {
         if (!isPetrovMarkerSet) {
             console.log("PEtROV FOUND!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-            location.addMarker(PetrovY, PetrovX);
+            location.addMarker(realPetrovY, realPetrovX);
             fillPetrov();
             isPetrovMarkerSet = true;
         }
@@ -55,7 +67,7 @@ function checkMarkers(positionY, positionX) {
     if (Number(positionX).toFixed(3) == divadloX && Number(positionY).toFixed(3) == divadloY) {
         if (!isDivadloMarkerSet) {
             console.log("DIVADLO FOUND!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-            location.addMarker(divadloY, divadloX);
+            location.addMarker(realdivadloY, realdivadloX);
             fillDivadlo();
             isPetrovMarkerSet = true;
         }
@@ -63,7 +75,7 @@ function checkMarkers(positionY, positionX) {
     if (Number(positionX).toFixed(3) == vilaX && Number(positionY).toFixed(3) == vilaY) {
         if (!isVilaSet) {
             console.log("VILA FOUND!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-            location.addMarker(vilaY, vilaX);
+            location.addMarker(realvilaY, realvilaX);
             fillVila();
             isVilaSet = true;
         }
