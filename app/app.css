@@ -5,8 +5,13 @@
 
 
 .icon {
-   font-family: 'icomoon';
-   font-size: 16;
+    horizontal-align: center;
+    background-repeat : no-repeat;
+    background-position : left center;
+}
+
+.speechit {
+    max-width: 40px
 }
 
 .fab-button {

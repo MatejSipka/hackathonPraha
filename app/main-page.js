@@ -55,14 +55,7 @@ exports.showDetail = function () {
 
 
 exports.buttonTap = function() {
-    if (!TTS.isSpeaking())
-    {
-        TTS.speak(speakOptions2);
-    }
-    else
-    {
-        TTS.stop();
-    }
+    TTS.speak(speakOptions2);
 }
 
 

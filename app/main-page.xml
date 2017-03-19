@@ -14,10 +14,11 @@ actionBarHidden="true">
                                 markerEndDragging="onMarkerEndDragging" markerDrag="onMarkerDrag"
                                 cameraChanged="onCameraChanged" />
     <Card:CardView tap="showDetail" id="test" zIndex="2" row="1" class="cardStyle" elevation="10">
-           <grid-layout rows="auto,auto,*" columns="auto,right,*">
-               <label id="explain-info"  class="info" text="" textWrap="true" row="1" col="1" />    
-               <button class="icon icon-headphones" tap="buttonTap" row="1" col="2" />     
-               <label class="detail" id="explain-text" text="" textWrap="true" row="2" col="1" colSpan="2" />
+           <grid-layout rows="auto,auto,*" columns="*,40">
+                <label id="explain-info"  class="info" text="" textWrap="true" row="0" col="0" />    
+                <button class="speechit icon" tap="buttonTap" backgroundImage="res://ic_my_location_black_24dp"  row="0" col="1" >
+                </button>    
+                <label class="detail" id="explain-text" text="" textWrap="true" row="1" col="0" colSpan="2" />
            </grid-layout>
     </Card:CardView>
     
