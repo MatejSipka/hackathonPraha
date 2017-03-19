@@ -3,8 +3,19 @@ var image = require("ui/image");
 
 var mapView;
 var marker;
+var isZoomedG = true;
 
-function addMarker() {
+function addMarker(Lat, Long) {
+
+    var mark = new mapsModule.Marker();
+    mark.position = mapsModule.Position.positionFromLatLng(Lat, Long);
+    
+    mark.userData = {
+        index: 1
+    };
+
+    mapView.addMarker(mark);
+
 }
 
 function addMarkerFirst(Long, Lat) {
@@ -28,8 +39,12 @@ function addMarkerFirst(Long, Lat) {
 
 function moveMarker(Long, Lat) {
     // marker.movePosition(mapsModule.Position.positionFromLatLng(Lat, Long));
-    mapView.longitude = Long;
-    mapView.latitude = Lat;
+    if (isZoomedG) {
+        console.log(isZoomedG);
+        mapView.longitude = Long;
+        mapView.latitude = Lat;
+        mapView.zoom = 15;
+    }
     marker.position = mapsModule.Position.positionFromLatLng(Lat, Long);
 }
 
@@ -38,5 +53,12 @@ exports.onMapReady = function onMapReady(args) {
     addMarkerFirst(0, 0);
 };
 
+function setZoon(isZoomed) {
+    isZoomedG = isZoomed;
+    console.log("isZoomedG " + isZoomedG);
+}
+
+exports.setZoon = setZoon;
 exports.moveMarker = moveMarker;
+exports.addMarker = addMarker;
 exports.addMarkerFirst = addMarkerFirst;
