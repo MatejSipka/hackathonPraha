@@ -5,9 +5,14 @@ var PetrovY = 16.607;
 
 var divadloX = 49.198;
 var divadloY = 16.613;
+
+var vilaX = 49.207;
+var vilaY = 16.616;
+
 var page;
 var view;
 var isPetrovMarkerSet = false;
+var isVilaSet = false;
 var isDivadloMarkerSet = false;
 
 exports.getCarPosition = function getActualCarPosition() {
@@ -51,7 +56,16 @@ function checkMarkers(positionY, positionX) {
         if (!isDivadloMarkerSet) {
             console.log("DIVADLO FOUND!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
             location.addMarker(divadloY, divadloX);
+            fillDivadlo();
             isPetrovMarkerSet = true;
+        }
+    }
+    if (Number(positionX).toFixed(3) == vilaX && Number(positionY).toFixed(3) == vilaY) {
+        if (!isVilaSet) {
+            console.log("VILA FOUND!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+            location.addMarker(vilaY, vilaX);
+            fillVila();
+            isVilaSet = true;
         }
     }
 }
@@ -59,6 +73,12 @@ function checkMarkers(positionY, positionX) {
 function setPage(pageLocal, viewLocal) {
     page = pageLocal;
     view = viewLocal;
+}
+
+function fillVila() {
+    view.getViewById(page, "explain-info").text = "Villa Tugendhat";
+    view.getViewById(page, "explain-text").text = "Villa Tugendhat is a historical building in the wealthy neighbourhood of Černá Pole in Brno, Czech Republic. It is one of the pioneering prototypes of modern architecture in Europe, and was designed by the German architect Ludwig Mies van der Rohe.";
+    view.getViewById(page, "explain-text").text += "Built of reinforced concrete between 1928 and 1930[1] for Fritz Tugendhat and his wife Greta, the villa soon became an icon of modernism.";
 }
 
 function fillPetrov() {
@@ -69,6 +89,13 @@ function fillPetrov() {
 
 }
 
-//
+function fillDivadlo() {
+    view.getViewById(page, "explain-info").text = "National Theatre Brno";
+    view.getViewById(page, "explain-text").text = "The National Theatre Brno is the major theatre house in Brno. It was established in 1884 and modeled on the National Theatre in Prague.";
+    view.getViewById(page, "explain-text").text += "It now consists of three stages:";
+    view.getViewById(page, "explain-text").text += "Mahen Theatre (drama), originally the German-language Theatre on the Walls (construction finished in 1882), the first theatre building on the continent with electric lighting (designed by Thomas Alva Edison himself).";
+    view.getViewById(page, "explain-text").text += "Janáček Theatre (opera, ballet), a modern building from 1961–1965. Zdenĕk Neverla was appointed general director of the Janáček Opera House in 1990.";
+    view.getViewById(page, "explain-text").text += "Reduta Theatre, the oldest theatre house in Central Europe, recently reconstructed. In December 1767 the twelve-year-old Wolfgang Amadeus Mozart gave a concert there.";
+}
 
 exports.setPage = setPage;
