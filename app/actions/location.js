@@ -2,37 +2,41 @@ var mapsModule = require("nativescript-google-maps-sdk");
 var image = require("ui/image");
 
 var mapView;
+var marker;
 
-function addMarkers(Long, Lat) {
+function addMarker() {
+}
+
+function addMarkerFirst(Long, Lat) {
+
+    console.log(mapView);
 
     mapView.zoom = 15;
     mapView.longitude = Long;
     mapView.latitude = Lat;
 
-    var icon = new image.Image();
-    icon.src = "../images/apple.jpg";
+    var mark = new mapsModule.Marker();
+    mark.position = mapsModule.Position.positionFromLatLng(Lat, Long);
 
-    // TODO : Add some Markers
-    // Fake one
-    var markers = /*TODO : GET markers */[{
-        position: mapsModule.Position.positionFromLatLng(Lat, Long),
-        userData: {
-            index: 1
-        },
-        icon: icon
-    }];
-    for (var i = 0; i < markers.length; i++) {
-        var mark = new mapsModule.Marker();
-        mark.position = markers[0].position;
-        mark.title = markers[0].title;
-        mark.snippet = markers[0].snippet;
-        mark.userData = markers[0].userData;
-        mapView.addMarker(mark);
-    }
+    mark.userData = {
+        index: 1
+    };
+
+    mapView.addMarker(mark);
+    marker = mark;
+}
+
+function moveMarker(Long, Lat) {
+    // marker.movePosition(mapsModule.Position.positionFromLatLng(Lat, Long));
+    mapView.longitude = Long;
+    mapView.latitude = Lat;
+    marker.position = mapsModule.Position.positionFromLatLng(Lat, Long);
 }
 
 exports.onMapReady = function onMapReady(args) {
     mapView = args.object;
+    addMarkerFirst(0, 0);
 };
 
-exports.addMarkers = addMarkers;
+exports.moveMarker = moveMarker;
+exports.addMarkerFirst = addMarkerFirst;

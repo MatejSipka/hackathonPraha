@@ -1,6 +1,7 @@
 var location = require("./location");
 
 exports.getCarPosition = function getActualCarPosition() {
+
     setInterval(function () {
         console.log("car postion");
         var myInit = {
@@ -16,7 +17,7 @@ exports.getCarPosition = function getActualCarPosition() {
             console.log(r);
             positionY = r.Data[0].Location.Lng;
             positionX = r.Data[0].Location.Lat;
-            location.addMarkers(positionY, positionX);
+            location.moveMarker(positionY, positionX);
             console.log(positionX + " " + positionY);
             // getActualCarPosition();
         }).catch(e => console.log(e));
