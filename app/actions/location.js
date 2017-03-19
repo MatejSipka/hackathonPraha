@@ -1,21 +1,25 @@
 var mapsModule = require("nativescript-google-maps-sdk");
+var image = require("ui/image");
 
+var mapView;
 
-function addMarkers(mapView) {
+function addMarkers(Long, Lat) {
 
     mapView.zoom = 15;
-    mapView.longitude = 16.58;
-    mapView.latitude = 49.20;
+    mapView.longitude = Long;
+    mapView.latitude = Lat;
+
+    var icon = new image.Image();
+    icon.src = "../images/apple.jpg";
 
     // TODO : Add some Markers
     // Fake one
     var markers = /*TODO : GET markers */[{
-        position: mapsModule.Position.positionFromLatLng(49.20, 16.58),
-        title: 'Brno',
-        snippet: 'Czechia',
+        position: mapsModule.Position.positionFromLatLng(Lat, Long),
         userData: {
             index: 1
-        }
+        },
+        icon: icon
     }];
     for (var i = 0; i < markers.length; i++) {
         var mark = new mapsModule.Marker();
@@ -27,9 +31,8 @@ function addMarkers(mapView) {
     }
 }
 
-
 exports.onMapReady = function onMapReady(args) {
-    var mapView = args.object;
-
-    addMarkers(mapView);
+    mapView = args.object;
 };
+
+exports.addMarkers = addMarkers;
