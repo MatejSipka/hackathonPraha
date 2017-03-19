@@ -16,7 +16,7 @@ actionBarHidden="true">
     <Card:CardView tap="showDetail" id="test" zIndex="2" row="1" class="cardStyle" elevation="10">
            <grid-layout rows="auto,auto,*" columns="*,40">
                 <label id="explain-info"  class="info" text="" textWrap="true" row="0" col="0" />    
-                <button class="speechit icon" tap="buttonTap" backgroundImage="res://ic_my_location_black_24dp"  row="0" col="1" >
+                <button class="speechit icon" tap="buttonTap" backgroundImage="res://ic_speaker_phone_black_24dp"  row="0" col="1" >
                 </button>    
                 <label class="detail" id="explain-text" text="" textWrap="true" row="1" col="0" colSpan="2" />
            </grid-layout>
