@@ -30,7 +30,7 @@ function addMarkerFirst(Long, Lat) {
 
     var mark = new mapsModule.Marker();
     mark.position = mapsModule.Position.positionFromLatLng(Lat, Long);
-    mark.icon = "marker"; 
+    mark.icon = "ic_directions_car_black_24dp"; 
 
     mark.userData = {
         index: 1
