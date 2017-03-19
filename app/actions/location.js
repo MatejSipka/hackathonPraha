@@ -5,7 +5,7 @@ var mapView;
 var marker;
 var isZoomedG = true;
 
-function addMarker(Lat, Long) {
+function addMarker(Long, Lat) {
 
     var mark = new mapsModule.Marker();
     mark.position = mapsModule.Position.positionFromLatLng(Lat, Long);
@@ -13,6 +13,8 @@ function addMarker(Lat, Long) {
     mark.userData = {
         index: 1
     };
+
+    console.log("Adding marker");
 
     mapView.addMarker(mark);
 
