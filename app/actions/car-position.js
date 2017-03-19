@@ -14,12 +14,12 @@ var divadloY = 16.613;
 var realdivadloX = 49.198320;
 var realdivadloY = 16.611004;
 
-var vilaX = 49.207;
-var vilaY = 16.616;
+var vilaX = 49.206;
+var vilaY = 16.617;
 
 //49.207206, 16.616012
-var realvilaX = 49.207206;
-var realvilaY = 16.616012;
+var realvilaX = 49.2071377;
+var realvilaY = 16.6160413;
 
 var page;
 var view;
