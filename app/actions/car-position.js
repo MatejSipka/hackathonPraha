@@ -15,7 +15,7 @@ var realdivadloX = 49.198320;
 var realdivadloY = 16.611004;
 
 var vilaX = 49.207;
-var vilaY = 16.617;
+var vilaY = 16.616;
 
 //49.207206, 16.616012
 var realvilaX = 49.207206;
@@ -33,7 +33,7 @@ exports.getCarPosition = function getActualCarPosition() {
         console.log("car postion");
         var myInit = {
             method: 'GET',
-            headers: { Authorization: "Bearer 0da27f7e-d977-4537-94aa-c7e528ecf867" },
+            headers: { Authorization: "Bearer 4dc55938-28ee-4df3-87d0-9ffd9ffffdd8" },
             mode: 'cors',
             cache: 'default'
         };
@@ -59,7 +59,7 @@ function checkMarkers(positionY, positionX) {
     if (Number(positionX).toFixed(3) == PetrovX && Number(positionY).toFixed(3) == PetrovY) {
         if (!isPetrovMarkerSet) {
             console.log("PEtROV FOUND!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-            location.addMarker(realPetrovY, realPetrovX);
+            location.addMarker(realPetrovY, realPetrovX, "Petrov");
             fillPetrov();
             isPetrovMarkerSet = true;
         }
@@ -67,7 +67,7 @@ function checkMarkers(positionY, positionX) {
     if (Number(positionX).toFixed(3) == divadloX && Number(positionY).toFixed(3) == divadloY) {
         if (!isDivadloMarkerSet) {
             console.log("DIVADLO FOUND!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-            location.addMarker(realdivadloY, realdivadloX);
+            location.addMarker(realdivadloY, realdivadloX, "NDB");
             fillDivadlo();
             isPetrovMarkerSet = true;
         }
@@ -75,7 +75,7 @@ function checkMarkers(positionY, positionX) {
     if (Number(positionX).toFixed(3) == vilaX && Number(positionY).toFixed(3) == vilaY) {
         if (!isVilaSet) {
             console.log("VILA FOUND!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-            location.addMarker(realvilaY, realvilaX);
+            location.addMarker(realvilaY, realvilaX, "Vila");
             fillVila();
             isVilaSet = true;
         }

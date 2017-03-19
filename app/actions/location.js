@@ -5,11 +5,11 @@ var mapView;
 var marker;
 var isZoomedG = true;
 
-function addMarker(Long, Lat) {
+function addMarker(Long, Lat, title) {
 
     var mark = new mapsModule.Marker();
     mark.position = mapsModule.Position.positionFromLatLng(Lat, Long);
-    
+    mark.title = title;
     mark.userData = {
         index: 1
     };
@@ -17,6 +17,7 @@ function addMarker(Long, Lat) {
     console.log("Adding marker");
 
     mapView.addMarker(mark);
+    mapView.notifyMarkerEvent('markerSelect', mark);
 
 }
 
@@ -33,7 +34,7 @@ function addMarkerFirst(Long, Lat) {
     mark.icon = "ic_directions_car_black_24dp"; 
 
     mark.userData = {
-        index: 1
+        index: 1,
     };
 
     mapView.addMarker(mark);
