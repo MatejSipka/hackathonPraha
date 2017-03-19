@@ -27,7 +27,6 @@ let speakOptions2 = {
 
 
 exports.funOut = function thisIsWhat() {
-    TTS.speak(speakOptions2);
     center = true;
     setZoon(center);
 };
@@ -54,6 +53,17 @@ exports.showDetail = function () {
     TTS.speak(speakOptions2);
 };
 
+
+exports.buttonTap = function() {
+    if (!TTS.isSpeaking())
+    {
+        TTS.speak(speakOptions2);
+    }
+    else
+    {
+        TTS.stop();
+    }
+}
 
 
 exports.pageLoaded = function (args) {

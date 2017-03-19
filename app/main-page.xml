@@ -14,9 +14,10 @@ actionBarHidden="true">
                                 markerEndDragging="onMarkerEndDragging" markerDrag="onMarkerDrag"
                                 cameraChanged="onCameraChanged" />
     <Card:CardView tap="showDetail" id="test" zIndex="2" row="1" class="cardStyle" elevation="10">
-           <grid-layout rows="auto,auto,*" columns="auto,*">
-               <label id="explain-info" text="Brno" class="info" textWrap="true" row="1" col="1" />          
-               <label class="detail" id="explain-text" text="Some more info which can be useful maybe. What about now and something more text and and and" textWrap="true" row="2" col="1" />
+           <grid-layout rows="auto,auto,*" columns="auto,right,*">
+               <label id="explain-info"  class="info" text="" textWrap="true" row="1" col="1" />    
+               <button class="icon icon-headphones" tap="buttonTap" row="1" col="2" />     
+               <label class="detail" id="explain-text" text="" textWrap="true" row="2" col="1" colSpan="2" />
            </grid-layout>
     </Card:CardView>
     
